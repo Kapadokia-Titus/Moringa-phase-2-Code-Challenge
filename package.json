@@ -23,6 +23,9 @@
       "react-app/jest"
     ]
   },
+  "overrides": {
+    "graceful-fs": "^4.2.10"
+  },
   "browserslist": {
     "production": [
       ">0.2%",

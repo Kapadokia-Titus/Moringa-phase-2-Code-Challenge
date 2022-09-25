@@ -1,15 +1,21 @@
 import React from "react";
 
-function Transaction(props) {
+function Transaction({trans, onDeleteTransaction}) {
+            
+     function handleDelete(event, id){
+      onDeleteTransaction(id)
+     }
+  
       return (
          <>
-          {props.trans?.map(data=>{
+          {trans?.map(data=>{
           return(
-            <tr key={data.id}>
-            <td>{data.date}</td>
-            <td>{data.description}</td>
+            <tr>
+            <td key={data.id} >{data.date}</td>
+            <td >{data.description}</td>
             <td>{data.category}</td>
-            <td>{data.ammount}</td>
+            <td>{data.amount}</td>
+            <td><button onClick={(e)=> handleDelete(e, data.id)} >Delete</button></td>
           </tr>
           )
          })}
